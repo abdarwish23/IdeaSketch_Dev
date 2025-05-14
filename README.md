@@ -11,8 +11,15 @@ IdeaSketch is a modern web application built with Next.js that provides an AI-po
 
 IdeaSketch utilizes a sophisticated multi-service architecture for AI-powered patent idea generation:
 
+### Overall Architecture
+![alt text](image.png)
+
+### Flowise Conversational Agent
 ![Flowise Flow](flowise_flow.png)
+
+### n8n Creat Patent doc tool
 ![N8N Flow](n8n_flow.png)
+
 
 ### Workflow Process
 
@@ -42,7 +49,9 @@ This architecture allows for complex AI processing while maintaining a responsiv
 - **Multiple Chat Sessions**: Create and manage multiple conversations
 
 ## Tech Stack
-
+- **BackEnd**: n8n workflow to create patent document
+- **BackEnd**: Flowise workflow to create brainstorming Multi-AI Agents (LangGraph)
+- **BackEnd**: Flowise Conversational AI Agent API that has Access to 2 Tools (brainstorming, create patent document)
 - **Framework**: [Next.js 15](https://nextjs.org/)
 - **UI**: [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
@@ -93,7 +102,8 @@ npm run dev
 ## What technologies are used for this project?
 
 This project is built with:
-
+- n8n
+- Flowise
 - Vite
 - TypeScript
 - React
