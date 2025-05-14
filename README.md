@@ -2,17 +2,57 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/13699329-e426-4102-ad16-aea60c4fe7cc
+# IdeaSketch
 
-## How can I edit this code?
+IdeaSketch is a modern web application built with Next.js that provides an AI-powered chat interface to assist with developing patent ideas. The application features a responsive design, real-time message streaming, markdown rendering, and persistent chat history.
 
-There are several ways of editing your application.
 
-**Use Lovable**
+## Architecture Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/13699329-e426-4102-ad16-aea60c4fe7cc) and start prompting.
+IdeaSketch utilizes a sophisticated multi-service architecture for AI-powered patent idea generation:
 
-Changes made via Lovable will be committed automatically to this repo.
+![Flowise Flow](flowise_flow.png)
+![N8N Flow](n8n_flow.png)
+
+### Workflow Process
+
+1. **Frontend Interface**: The Next.js application provides the user interface and handles communication with the AI backend.
+
+2. **AI Agent (Flowise)**: The main AI agent is implemented as a Flowise flow, which:
+   - Processes the initial user request
+   - Orchestrates the patent creation workflow
+   - Manages the conversation context and generation
+
+3. **Patent Generation (n8n)**: The Flowise flow triggers an n8n workflow that:
+   - Performs specialized patent-specific processing
+   - Generates structured patent ideas and content
+   - Returns processed results to the Flowise agent
+
+4. **Response Stream**: The AI-generated responses are streamed back to the frontend in real-time, creating a seamless user experience.
+
+This architecture allows for complex AI processing while maintaining a responsive user interface.
+
+## Features
+
+- **Responsive UI**: Works seamlessly on desktop and mobile devices
+- **Real-time Message Streaming**: See AI responses as they're generated
+- **Markdown Support**: Rich text formatting with code syntax highlighting
+- **Persistent Chat History**: Saves your conversations locally
+- **Dark Mode Support**: Automatically adapts to your system preferences
+- **Multiple Chat Sessions**: Create and manage multiple conversations
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **UI**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons**: [React Feather](https://github.com/feathericons/react-feather)
+- **Markdown**: [React Markdown](https://github.com/remarkjs/react-markdown)
+- **Syntax Highlighting**: [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- **Table Support**: [Remark GFM](https://github.com/remarkjs/remark-gfm)
+- **Build Tool**: [Turbopack](https://turbo.build/pack)
+
+
 
 **Use your preferred IDE**
 
@@ -60,14 +100,3 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/13699329-e426-4102-ad16-aea60c4fe7cc) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
